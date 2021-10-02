@@ -25,7 +25,14 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 import { WelcomeComponent } from './welcome/welcome.component';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { PostArticleComponent } from './article/post-article/post-article.component';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
+
+import {MatButtonModule} from '@angular/material/button';
+import {MatInputModule} from '@angular/material/input';
+import {MatRippleModule} from '@angular/material/core';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   imports: [
@@ -36,7 +43,17 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatButtonModule,
+    MatRippleModule,
     MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTooltipModule,
+
+
+
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
