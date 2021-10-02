@@ -22,6 +22,10 @@ import {
   AgmCoreModule
 } from '@agm/core';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { IssueListComponent } from './issue-list/issue-list.component';
+import { PostArticleComponent } from './article/post-article/post-article.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   imports: [
@@ -32,6 +36,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    MatFormFieldModule,
     AgmCoreModule.forRoot({
       apiKey: 'YOUR_GOOGLE_MAPS_API_KEY'
     })
@@ -39,6 +44,9 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   declarations: [
     AppComponent,
     AdminLayoutComponent,
+    WelcomeComponent,
+    IssueListComponent,
+    PostArticleComponent,
 
   ],
   providers: [],
