@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header card-header-warning">
+        <h4 class="card-title">Article Title</h4>
+        <p class="card-category">List of articles</p>
+    </div>
+
+    <div class="card-content table-responsive ">
+        <table class="table">
+            <thead class="text-danger">
+                <th>Name</th>
+                <th>Username</th>
+                <th>Email</th>
+                <th>City</th>
+                <th>Actions</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of collection">
+                    <td>{{item.name}}</td>
+                    <td>{{item.username}}</td>
+                    <td>{{item.email}}</td>
+                    <td>{{item.address.city}}</td>
+                    <td>
+                        <a [routerLink]="['../edit-article',item.id]">Edit</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

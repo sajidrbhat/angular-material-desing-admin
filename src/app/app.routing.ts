@@ -1,4 +1,4 @@
-import { PostArticleComponent } from "./article/post-article/post-article.component";
+import { ListArticleComponent } from "./article/list-article/list-article.component";
 import { IssueListComponent } from "./issue-list/issue-list.component";
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { NgModule } from "@angular/core";
@@ -7,6 +7,8 @@ import { BrowserModule } from "@angular/platform-browser";
 import { Routes, RouterModule } from "@angular/router";
 
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { AddArticleComponent } from "./article/add-article/add-article.component";
+import { EditArticleComponent } from "./article/edit-article/edit-article.component";
 
 const routes: Routes = [
   {
@@ -14,7 +16,9 @@ const routes: Routes = [
     component: WelcomeComponent,
     children: [
       { path: "issue-list", component: IssueListComponent },
-      { path: "post-article", component: PostArticleComponent },
+      { path: "list-article", component: ListArticleComponent },
+      { path: "add-article", component: AddArticleComponent },
+      { path: "edit-article/:id", component: EditArticleComponent },
     ],
   },
 
