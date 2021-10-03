@@ -36,6 +36,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { ListArticleComponent } from './article/list-article/list-article.component';
 import { AddArticleComponent } from './article/add-article/add-article.component';
 import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { DeleteArticleComponent } from './article/delete-article/delete-article.component';
 
 @NgModule({
   imports: [
@@ -70,6 +71,7 @@ import { EditArticleComponent } from './article/edit-article/edit-article.compon
     ListArticleComponent,
     AddArticleComponent,
     EditArticleComponent,
+    DeleteArticleComponent,
 
   ],
   providers: [],

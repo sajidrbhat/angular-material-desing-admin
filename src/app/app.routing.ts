@@ -9,6 +9,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
 import { AddArticleComponent } from "./article/add-article/add-article.component";
 import { EditArticleComponent } from "./article/edit-article/edit-article.component";
+import { DeleteArticleComponent } from "./article/delete-article/delete-article.component";
 
 const routes: Routes = [
   {
@@ -19,12 +20,14 @@ const routes: Routes = [
       { path: "list-article", component: ListArticleComponent },
       { path: "add-article", component: AddArticleComponent },
       { path: "edit-article/:id", component: EditArticleComponent },
+      { path: "delete-article/:id", component: DeleteArticleComponent },
+      { path: "", redirectTo: "issue-list", pathMatch: "full" },
     ],
   },
 
   {
     path: "",
-    redirectTo: "dashboard",
+    redirectTo: "welcome",
     pathMatch: "full",
   },
   {
