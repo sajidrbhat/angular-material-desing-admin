@@ -9,4 +9,7 @@ export class ArticleService {
   list() {
     return this.http.get(this.baseUrl + "users");
   }
+  get(id: string) {
+    return this.http.get(this.baseUrl + "users/" + id);
+  }
 }

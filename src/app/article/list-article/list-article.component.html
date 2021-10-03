@@ -20,9 +20,9 @@
                     <td>{{item.email}}</td>
                     <td>{{item.address.city}}</td>
                     <td>
-                        <a [routerLink]="['../edit-article',item.id]">Edit</a>
+                        <a [routerLink]="['/article/edit',item.id]">Edit</a>
                         |
-                        <a [routerLink]="['../delete-article',item.id]">Delete</a>
+                        <a [routerLink]="['/article/delete',item.id]">Delete</a>
                     </td>
                 </tr>
             </tbody>

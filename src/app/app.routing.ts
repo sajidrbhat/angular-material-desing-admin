@@ -13,14 +13,19 @@ import { DeleteArticleComponent } from "./article/delete-article/delete-article.
 
 const routes: Routes = [
   {
-    path: "welcome",
+    path: "",
     component: WelcomeComponent,
     children: [
       { path: "issue-list", component: IssueListComponent },
-      { path: "list-article", component: ListArticleComponent },
-      { path: "add-article", component: AddArticleComponent },
-      { path: "edit-article/:id", component: EditArticleComponent },
-      { path: "delete-article/:id", component: DeleteArticleComponent },
+      {
+        path: "article",
+        children: [
+          { path: "list", component: ListArticleComponent },
+          { path: "add", component: AddArticleComponent },
+          { path: "edit/:id", component: EditArticleComponent },
+          { path: "delete/:id", component: DeleteArticleComponent },
+        ],
+      },
       { path: "", redirectTo: "issue-list", pathMatch: "full" },
     ],
   },
@@ -35,7 +40,7 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       {
-        path: "",
+        path: "admin",
         loadChildren: () =>
           import("./layouts/admin-layout/admin-layout.module").then(
             (m) => m.AdminLayoutModule
@@ -46,13 +51,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    BrowserModule,
-    RouterModule.forRoot(routes, {
-      useHash: true,
-    }),
-  ],
+  imports: [CommonModule, BrowserModule, RouterModule.forRoot(routes)],
   exports: [],
 })
 export class AppRoutingModule {}
