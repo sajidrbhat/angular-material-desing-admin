@@ -12,4 +12,7 @@ export class ArticleService {
   get(id: string) {
     return this.http.get(this.baseUrl + "users/" + id);
   }
+  add(object: any) {
+    return this.http.post(this.baseUrl + "users", object);
+  }
 }
