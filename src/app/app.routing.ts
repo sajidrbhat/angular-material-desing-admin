@@ -31,16 +31,11 @@ const routes: Routes = [
   },
 
   {
-    path: "",
-    redirectTo: "welcome",
-    pathMatch: "full",
-  },
-  {
-    path: "",
+    path: "admin",
     component: AdminLayoutComponent,
     children: [
       {
-        path: "admin",
+        path: "",
         loadChildren: () =>
           import("./layouts/admin-layout/admin-layout.module").then(
             (m) => m.AdminLayoutModule
