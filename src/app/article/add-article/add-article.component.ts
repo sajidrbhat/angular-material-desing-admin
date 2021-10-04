@@ -24,10 +24,10 @@ export class AddArticleComponent implements OnInit {
   }
 
   add() {
-    this.service.add(this.form.value).subscribe(
+    this.service.post(this.form.value).subscribe(
       (data) => {
         console.log("added succesfully");
-        this.matSnackbar.open("record created successfully."); 
+        this.matSnackbar.open("record added successfully.");
       },
       (err) => {
         console.log(err);
