@@ -18,4 +18,7 @@ export class ArticleService {
   delete(id: any) {
     return this.http.delete(this.baseUrl + "users/" + id);
   }
+  update(id: any, object: any) {
+    return this.http.put(this.baseUrl + "users/" + id, object);
+  }
 }

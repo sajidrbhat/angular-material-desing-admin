@@ -17,7 +17,7 @@ export class AddArticleComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.form = this.formBuilder.group({
+    this.form = this.formBuilder.group({ 
       title: new FormControl(""),
       description: new FormControl(""),
     });
