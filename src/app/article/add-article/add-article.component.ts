@@ -1,6 +1,6 @@
 import { ArticleService } from "app/services/article.service";
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup } from "@angular/forms";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({
@@ -18,8 +18,8 @@ export class AddArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this.formBuilder.group({ 
-      title: new FormControl(""),
-      description: new FormControl(""),
+      title: new FormControl("",[Validators.required,Validators.minLength(3)]),
+      description: new FormControl("",[Validators.required,Validators.minLength(3)]),
     });
   }
 

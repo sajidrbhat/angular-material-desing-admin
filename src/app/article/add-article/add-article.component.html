@@ -23,7 +23,8 @@
                                     </mat-form-field>
                                 </div>
                             </div>
-                            <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update
+                            <button [disabled]="!form.valid" mat-raised-button type="submit"
+                                class="btn btn-danger pull-right">Update
                                 Profile</button>
                             <div class="clearfix"></div>
                         </form>
