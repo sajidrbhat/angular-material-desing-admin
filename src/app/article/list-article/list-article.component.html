@@ -3,29 +3,46 @@
         <h4 class="card-title">Article Title</h4>
         <p class="card-category">List of articles</p>
     </div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-    <div class="card-content table-responsive ">
-        <table class="table">
-            <thead class="text-danger">
-                <th>Name</th>
-                <th>Username</th>
-                <th>Email</th>
-                <th>City</th>
-                <th>Actions</th>
-            </thead>
-            <tbody>
-                <tr *ngFor="let item of collection">
-                    <td>{{item.name}}</td>
-                    <td>{{item.username}}</td>
-                    <td>{{item.email}}</td>
-                    <td>{{item.address.city}}</td>
-                    <td>
-                        <a [routerLink]="['/article/edit',item.id]">Edit</a>
-                        |
-                        <a [routerLink]="['/article/delete',item.id]">Delete</a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+
+        <!-- Weight Column -->
+        <ng-container matColumnDef="username">
+            <th mat-header-cell *matHeaderCellDef> username </th>
+            <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> email </th>
+            <td mat-cell *matCellDef="let element"> {{element.email| uppercase}} </td>
+        </ng-container>
+
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> action </th>
+            <td mat-cell *matCellDef="let element">
+                <a [routerLink]="['/article/edit',element.id]">Edit</a>
+                |
+                <a [routerLink]="['/article/delete',element.id]">Delete</a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
 </div>

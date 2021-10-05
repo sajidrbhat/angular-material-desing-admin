@@ -1,3 +1,5 @@
+import { Observable } from "rxjs";
+import { User } from "./../article/list-article/list-article.component";
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 @Injectable({
@@ -6,8 +8,8 @@ import { HttpClient } from "@angular/common/http";
 export class ArticleService {
   baseUrl: string = "https://jsonplaceholder.typicode.com/";
   constructor(private http: HttpClient) {}
-  list() {
-    return this.http.get(this.baseUrl + "users");
+  list(): Observable<User[]> {
+    return this.http.get<User[]>(this.baseUrl + "users");
   }
   get(id: string) {
     return this.http.get(this.baseUrl + "users/" + id);

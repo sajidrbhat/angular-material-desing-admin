@@ -33,6 +33,8 @@ import { ListArticleComponent } from "./article/list-article/list-article.compon
 import { AddArticleComponent } from "./article/add-article/add-article.component";
 import { EditArticleComponent } from "./article/edit-article/edit-article.component";
 import { DeleteArticleComponent } from "./article/delete-article/delete-article.component";
+import { MatTableModule } from "@angular/material/table";
+
 import {
   MatSnackBarModule,
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
@@ -56,6 +58,7 @@ import {
     MatSelectModule,
     MatTooltipModule,
     MatSnackBarModule,
+    MatTableModule,
     AgmCoreModule.forRoot({
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY",
     }),
