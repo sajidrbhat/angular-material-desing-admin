@@ -23,4 +23,19 @@ export class ArticleService {
   update(id: any, object: any) {
     return this.http.put(this.baseUrl + "users/" + id, object);
   }
+
+  /*
+  readonly APIUrl = "http://localhost:58683/api";
+  readonly PhotoUrl = "http://localhost:58683/Photos";
+  constructor(private http: HttpClient) {}
+  getDepList(): Observable<Department[]> {
+    return this.http.get<Department[]>(this.APIUrl + "/department");
+  }
+  addDepartment(val: any) {
+    return this.http.post(this.APIUrl + "/department", val);
+  }
+  uploadPhoto(val: any) {
+    return this.http.post(this.APIUrl + "/Employee/SaveFile", val);
+  }
+  */
 }
