@@ -22,6 +22,10 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { IssueListComponent } from "./issue-list/issue-list.component";
 import { PostArticleComponent } from "./article/post-article/post-article.component";
+import { ListArticleComponent } from "./article/list-article/list-article.component";
+import { AddArticleComponent } from "./article/add-article/add-article.component";
+import { EditArticleComponent } from "./article/edit-article/edit-article.component";
+import { DeleteArticleComponent } from "./article/delete-article/delete-article.component";
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatInputModule } from "@angular/material/input";
@@ -29,10 +33,7 @@ import { MatRippleModule } from "@angular/material/core";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { MatSelectModule } from "@angular/material/select";
-import { ListArticleComponent } from "./article/list-article/list-article.component";
-import { AddArticleComponent } from "./article/add-article/add-article.component";
-import { EditArticleComponent } from "./article/edit-article/edit-article.component";
-import { DeleteArticleComponent } from "./article/delete-article/delete-article.component";
+import {MatCardModule} from '@angular/material/card';
 import { MatTableModule } from "@angular/material/table";
 
 import {
@@ -40,6 +41,7 @@ import {
   MAT_SNACK_BAR_DEFAULT_OPTIONS,
   MAT_SNACK_BAR_DEFAULT_OPTIONS_FACTORY,
 } from "@angular/material/snack-bar";
+import { HomeComponent } from './home/home.component';
 @NgModule({
   imports: [
     BrowserAnimationsModule,
@@ -59,6 +61,7 @@ import {
     MatTooltipModule,
     MatSnackBarModule,
     MatTableModule,
+    MatCardModule,
     AgmCoreModule.forRoot({
       apiKey: "YOUR_GOOGLE_MAPS_API_KEY",
     }),
@@ -73,6 +76,8 @@ import {
     AddArticleComponent,
     EditArticleComponent,
     DeleteArticleComponent,
+    HomeComponent,
+    
   ],
   providers: [
     { provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: { duration: 2500 } },
@@ -80,3 +85,9 @@ import {
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+
+
+//https://mdbootstrap.com/docs/angular/content/images/
+//https://material.angular.io/components/card/api
+//https://demos.creative-tim.com/material-dashboard-angular2/#/documentation/cards
+//https://getbootstrap.com/docs/5.1/content/images/#image-thumbnails

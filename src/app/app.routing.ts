@@ -10,6 +10,7 @@ import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.compon
 import { AddArticleComponent } from "./article/add-article/add-article.component";
 import { EditArticleComponent } from "./article/edit-article/edit-article.component";
 import { DeleteArticleComponent } from "./article/delete-article/delete-article.component";
+import { HomeComponent } from "./home/home.component";
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
     component: WelcomeComponent,
     children: [
       { path: "issue-list", component: IssueListComponent },
+      { path: "home", component: HomeComponent },
       {
         path: "article",
         children: [
@@ -26,7 +28,7 @@ const routes: Routes = [
           { path: "delete/:id", component: DeleteArticleComponent },
         ],
       },
-      { path: "", redirectTo: "issue-list", pathMatch: "full" },
+      { path: "", redirectTo: "home", pathMatch: "full" },
     ],
   },
 
