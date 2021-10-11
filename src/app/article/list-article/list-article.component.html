@@ -46,3 +46,7 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
 </div>
+
+<ul>
+    <li *ngFor="let item of departments">{{item.DepartmentName}}</li>
+</ul>

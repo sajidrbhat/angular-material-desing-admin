@@ -23,7 +23,9 @@ export class ArticleService {
   update(id: any, object: any) {
     return this.http.put(this.baseUrl + "users/" + id, object);
   }
-
+  d_list(): Observable<any[]> {
+    return this.http.get<any[]>("http://api.caasjk.com/department");
+  }
   /*
   readonly APIUrl = "http://localhost:58683/api";
   readonly PhotoUrl = "http://localhost:58683/Photos";
